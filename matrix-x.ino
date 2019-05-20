@@ -62,15 +62,14 @@ byte e_6[] = {B11110001,B11110111,B11110111,B11110001,B11110101,B11110101,B11110
 byte e_7[] = {B11110001,B11111101,B11111101,B11111101,B11111101,B11111101,B11111101,B11111101};
 byte e_8[] = {B11110001,B11110101,B11110101,B11110001,B11110101,B11110101,B11110101,B11110001};
 byte e_9[] = {B11110001,B11110101,B11110101,B11110001,B11111101,B11111101,B11111101,B11110001};
-//byte potty[] = {B11111110,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111};
-  byte eredmeny[] = {B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111};
+byte eredmeny[] = {B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111};
   
 float timeCount = 0;
 
 void setup() 
 {
     // Open serial port
-    Serial.begin(9600);
+    //Serial.begin(9600);
     
     // Set all used pins to OUTPUT
     // This is very important! If the pins are set to input
@@ -102,9 +101,13 @@ void valtas(){
 
 void  osszeadas(byte tizesek[], byte egyesek[]){
   for (byte i = 0; i< 9; i++) {
-    eredmeny[i] = tizesek[i] + egyesek[i];
-    if(menu == 0 && i==0) // if display temperature toggle top-right led 
-      eredmeny[i] ^= 1; 
+    if(menu == 0) {
+        eredmeny[i] = tizesek[i] + egyesek[i];
+      if(i!=0)
+        eredmeny[i] ^= 1;
+    }
+    else
+      eredmeny[i] = tizesek[i] + egyesek[i]^1;
   }
 }
 
