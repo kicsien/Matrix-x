@@ -5,5 +5,5 @@ There are two modes:<br>
 2. display humidity<br>
 
 <br>
-<strong>Original project: </strong> https://create.arduino.cc/projecthub/SAnwandter1/programming-8x8-led-matrix-23475a
+<strong>Original project: </strong> https://create.arduino.cc/projecthub/SAnwandter1/programming-8x8-led-matrix-23475a<br>
 <strong>More info: </strong> http://chuckie.ssdhost.website/2019/04/03/matrix-kocka/
